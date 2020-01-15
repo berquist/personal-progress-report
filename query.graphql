@@ -7,7 +7,6 @@
           name
           owner {
             ... on Organization {
-              name
               login
             }
           }
@@ -15,7 +14,14 @@
         publishedAt
         author {
           ... on User {
-            name
+            login
+          }
+        }
+        createdAt
+        closedAt
+        closed
+        assignees(last: 10) {
+          nodes {
             login
           }
         }
