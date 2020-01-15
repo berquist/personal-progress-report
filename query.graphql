@@ -1,0 +1,25 @@
+{
+  user(login: "berquist") {
+    issues(last: 20) {
+      nodes {
+        title
+        repository {
+          name
+          owner {
+            ... on Organization {
+              name
+              login
+            }
+          }
+        }
+        publishedAt
+        author {
+          ... on User {
+            name
+            login
+          }
+        }
+      }
+    }
+  }
+}
