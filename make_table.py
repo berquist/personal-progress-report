@@ -23,6 +23,9 @@ for repository in repositories_with_issues:
     issues.loc[:, "labels"] = issues.loc[:, "labels"].map(
         lambda x: list(y["name"] for y in x["nodes"])
     )
+    issues.loc[:, "assignees"] = issues.loc[:, "assignees"].map(
+        lambda x: list(y["login"] for y in x["nodes"])
+    )
     issues = issues.set_index("url")
     issues["name"] = repository["name"]
     transformed_issues.append(issues)

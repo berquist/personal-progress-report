@@ -9,6 +9,11 @@
             author {
               login
             }
+            assignees(last: 20) {
+              nodes {
+                login
+              }
+            }
             url
             title
             state
