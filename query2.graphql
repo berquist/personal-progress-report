@@ -1,0 +1,29 @@
+{
+  organization(login: "isi-vista") {
+    repositories(last: 100) {
+      nodes {
+        url
+        name
+        issues(last: 100) {
+          nodes {
+            author {
+              login
+            }
+            url
+            title
+            state
+            createdAt
+            updatedAt
+            closed
+            closedAt
+            labels(last: 20) {
+              nodes {
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

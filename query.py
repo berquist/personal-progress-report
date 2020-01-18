@@ -13,11 +13,11 @@ if not api_token:
     )
 url = 'https://api.github.com/graphql'
 # query = { 'query' : '{ viewer { repositories(first: 30) { totalCount pageInfo { hasNextPage endCursor } edges { node { name } } } } }' }
-query = { 'query': Path("./query.graphql").read_text() }
+query = { 'query': Path("./query2.graphql").read_text() }
 headers = {'Authorization': f'token {api_token}'}
 
 r = requests.post(url=url, json=query, headers=headers)
 result = json.loads(r.text)
 with open("result.json", "w") as handle:
-    json.dump(result, handle)
-print(result)
+    json.dump(result, handle, indent=4)
+# print(json.dumps(result, indent=4))

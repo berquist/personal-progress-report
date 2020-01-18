@@ -20,7 +20,7 @@
         createdAt
         closedAt
         closed
-        assignees(last: 10) {
+        assignees(last: 4) {
           nodes {
             login
           }
