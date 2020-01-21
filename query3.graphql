@@ -1,0 +1,58 @@
+{
+  organization(login: "isi-vista") {
+    repositories(last: 20) {
+      nodes {
+        issues(last: 20) {
+          edges {
+            node {
+              ... on Issue {
+                createdAt
+                closed
+                closedAt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+# {
+#   repository(owner: "Automattic", name: "wp-calypso") {
+#     issueOrPullRequest(number: 23226) {
+#       __typename
+#       ... on Closable {
+#         closed
+#         closedAt
+#       }
+#       ... on Issue {
+#         timeline(last: 20) {
+#           edges {
+#             node {
+#               __typename
+#               ... on ClosedEvent {
+#                 actor{
+#                   login
+#                 }
+#               }
+#             }
+#           }
+#         }
+#       }
+#       ... on PullRequest {
+#         timeline(last: 20) {
+#           edges {
+#             node {
+#               __typename
+#               ... on MergedEvent {
+#                 actor{
+#                   login
+#                 }
+#               }
+#             }
+#           }
+#         }
+#       }
+#     }
+#   }
+# }

@@ -12,8 +12,7 @@ if not api_token:
         f"GitHub API token not stored in env variable ${api_token_envvar}"
     )
 url = 'https://api.github.com/graphql'
-# query = { 'query' : '{ viewer { repositories(first: 30) { totalCount pageInfo { hasNextPage endCursor } edges { node { name } } } } }' }
-query = { 'query': Path("./query2.graphql").read_text() }
+query = { 'query': Path("./query3.graphql").read_text() }
 headers = {'Authorization': f'token {api_token}'}
 
 r = requests.post(url=url, json=query, headers=headers)
